@@ -87,16 +87,17 @@ checksum = "5c6cb57a04249c6480766f7f7cef5467412af1490f8d1e243141daddada3264f"
 
 [[package]]
 name = "alloy-primitives"
-version = "0.7.7"
+version = "0.8.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ccb3ead547f4532bc8af961649942f0b9c16ee9226e26caa3f38420651cc0bf4"
+checksum = "c71738eb20c42c5fb149571e76536a0f309d142f3957c28791662b96baf77a3d"
 dependencies = [
  "bytes",
  "cfg-if",
  "const-hex",
- "derive_more",
+ "derive_more 1.0.0",
  "hex-literal",
  "itoa",
+ "paste",
  "ruint",
  "tiny-keccak",
 ]
@@ -1458,6 +1459,27 @@ dependencies = [
 ]
 
 [[package]]
+name = "derive_more"
+version = "1.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4a9b99b9cbbe49445b21764dc0625032a89b145a2642e67603e1c936f5458d05"
+dependencies = [
+ "derive_more-impl",
+]
+
+[[package]]
+name = "derive_more-impl"
+version = "1.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cb7330aeadfbe296029522e6c40f315320aba36fc43a5b3632f3795348f3bd22"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.61",
+ "unicode-xid",
+]
+
+[[package]]
 name = "digest"
 version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2566,7 +2588,7 @@ version = "5.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3d4a862aedbfda93175ddf75c9aaa2ae4c4b39ee5cee06c16d50bccce05bf5c7"
 dependencies = [
- "derive_more",
+ "derive_more 0.99.17",
  "ink_env",
  "ink_macro",
  "ink_metadata",
@@ -2594,7 +2616,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "70a1f8473fa09e0f9b6f3cb3f8d18c07c14ebf9ea1f7cdfee270f009d45ee8e9"
 dependencies = [
  "blake2",
- "derive_more",
+ "derive_more 0.99.17",
  "either",
  "heck 0.4.1",
  "impl-serde",
@@ -2650,7 +2672,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "140a968d5209f32105115fbb48822e5b6c8655f67415add082a4ab16480d4826"
 dependencies = [
  "darling 0.20.8",
- "derive_more",
+ "derive_more 0.99.17",
  "ink_ir",
  "proc-macro2",
  "quote",
@@ -2666,7 +2688,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4f357e2e867f4e222ffc4015a6e61d1073548de89f70a4e36a8b0385562777fa"
 dependencies = [
  "blake2",
- "derive_more",
+ "derive_more 0.99.17",
  "ink_primitives",
  "pallet-contracts-uapi-next",
  "parity-scale-codec",
@@ -2684,7 +2706,7 @@ dependencies = [
  "blake2",
  "cfg-if",
  "const_env",
- "derive_more",
+ "derive_more 0.99.17",
  "ink_allocator",
  "ink_engine",
  "ink_prelude",
@@ -2743,7 +2765,7 @@ version = "5.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a98fcc0ff9292ff68c7ee7b84c93533c9ff13859ec3b148faa822e2da9954fe6"
 dependencies = [
- "derive_more",
+ "derive_more 0.99.17",
  "impl-serde",
  "ink_prelude",
  "ink_primitives",
@@ -2769,7 +2791,7 @@ version = "5.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "11ec35ef7f45e67a53b6142d7e7f18e6d9292d76c3a2a1da14cf8423e481813d"
 dependencies = [
- "derive_more",
+ "derive_more 0.99.17",
  "ink_prelude",
  "parity-scale-codec",
  "scale-decode",
@@ -2786,7 +2808,7 @@ checksum = "bbdb04cad74df858c05bc9cb6f30bbf12da33c3e2cb7ca211749c001fa761aa9"
 dependencies = [
  "array-init",
  "cfg-if",
- "derive_more",
+ "derive_more 0.99.17",
  "ink_env",
  "ink_metadata",
  "ink_prelude",
@@ -3853,7 +3875,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "567c738aa6b8d7eb113fe73e50fb9b6292f818f54da98bb25c7fe73e98d1709a"
 dependencies = [
  "bounded-collections",
- "derive_more",
+ "derive_more 0.99.17",
  "parity-scale-codec",
  "polkadot-core-primitives",
  "scale-info",
@@ -4430,7 +4452,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "58c4eb8a81997cf040a091d1f7e1938aeab6749d3a0dfa73af43cdc32393483d"
 dependencies = [
  "byteorder",
- "derive_more",
+ "derive_more 0.99.17",
  "twox-hash",
 ]
 
@@ -4475,7 +4497,7 @@ version = "0.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7caaf753f8ed1ab4752c6afb20174f03598c664724e0e32628e161c21000ff76"
 dependencies = [
- "derive_more",
+ "derive_more 0.99.17",
  "parity-scale-codec",
  "primitive-types",
  "scale-bits",
@@ -4503,7 +4525,7 @@ version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6d70cb4b29360105483fac1ed567ff95d65224a14dd275b6303ed0a654c78de5"
 dependencies = [
- "derive_more",
+ "derive_more 0.99.17",
  "parity-scale-codec",
  "primitive-types",
  "scale-bits",
@@ -4533,7 +4555,7 @@ checksum = "eca070c12893629e2cc820a9761bedf6ce1dcddc9852984d1dc734b8bd9bd024"
 dependencies = [
  "bitvec",
  "cfg-if",
- "derive_more",
+ "derive_more 0.99.17",
  "parity-scale-codec",
  "scale-info-derive",
  "schemars",
@@ -4573,7 +4595,7 @@ checksum = "58223c7691bf0bd46b43c9aea6f0472d1067f378d574180232358d7c6e0a8089"
 dependencies = [
  "base58",
  "blake2",
- "derive_more",
+ "derive_more 0.99.17",
  "either",
  "frame-metadata 15.1.0",
  "parity-scale-codec",
@@ -5021,7 +5043,7 @@ dependencies = [
  "bs58",
  "chacha20",
  "crossbeam-queue",
- "derive_more",
+ "derive_more 0.99.17",
  "ed25519-zebra 4.0.3",
  "either",
  "event-listener 4.0.3",
@@ -5071,7 +5093,7 @@ dependencies = [
  "async-lock",
  "base64 0.21.7",
  "blake2-rfc",
- "derive_more",
+ "derive_more 0.99.17",
  "either",
  "event-listener 4.0.3",
  "fnv",
