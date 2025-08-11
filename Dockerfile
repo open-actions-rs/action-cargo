@@ -1,4 +1,4 @@
-FROM rust:1.87-bullseye as runtime
+FROM rust:1.89-bullseye as runtime
 ENV DEBIAN_FRONTEND=noninteractive
 ARG target=x86_64-unknown-linux-gnu
 RUN apt-get update && apt-get install -qy libssl-dev pkg-config binaryen
