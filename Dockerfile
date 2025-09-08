@@ -8,6 +8,7 @@ RUN rustup component add rust-src
 RUN rustup component add clippy
 RUN cargo install cargo-dylint
 RUN cargo install dylint-link
+RUN cargo install cargo-audit
 RUN cargo install cargo-contract --force
 WORKDIR /github/workspace
 COPY ./entrypoint.sh /entrypoint.sh
