@@ -27,7 +27,7 @@ jobs:
           cargo-cmd: cargo contract build
           working-directory: examples/hello
       - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: contracts
           path: |
